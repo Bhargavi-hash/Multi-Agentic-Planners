@@ -22,13 +22,13 @@ Usage (examples):
   export GITHUB_TOKEN=ghp_your_token_here
   export GITHUB_OWNER=your_github_username  # or pass --owner on CLI
 
-  # 1) Let the planner create a plan and run it:
+  ### 1) Let the planner create a plan and run it:
   python github_operator.py --prompt "Create a public repo 'storyloom' with a README saying 'Hello World'"
 
-  # 2) Dry‑run to see the calls without executing:
+  ### 2) Dry‑run to see the calls without executing:
   python github_operator.py --prompt "rename repo storyloom to storyloom-pro" --dry-run
 
-  # 3) Execute an explicit plan file (skip planner):
+  ### 3) Execute an explicit plan file (skip planner):
   cat > plan.txt <<EOF
   [TOOL:CREATE_REPO] {"name": "demo-repo", "private": false, "description": "demo"}
   [TOOL:UPSERT_README] {"repo": "demo-repo", "content": "# Demo\nHello from the operator."}
