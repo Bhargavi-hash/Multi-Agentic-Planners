@@ -29,6 +29,7 @@ Usage (examples):
   python github_operator.py --prompt "rename repo storyloom to storyloom-pro" --dry-run
 
   ### 3) Execute an explicit plan file (skip planner):
+  ```
   cat > plan.txt <<EOF
   [TOOL:CREATE_REPO] {"name": "demo-repo", "private": false, "description": "demo"}
   [TOOL:UPSERT_README] {"repo": "demo-repo", "content": "# Demo\nHello from the operator."}
@@ -37,6 +38,7 @@ Usage (examples):
   [TOOL:CREATE_GIST] {"description": "Demo Gist", "files": {"file1.txt": {"content": "Hello World"}}}
   EOF
   python github_operator.py --plan-file plan.txt
+```
 
 Notes:
 - Token scopes: For personal repos, a classic token with `repo` scope works. Fine‑grained tokens: enable repo:read/write, and delete repoes if you plan to delete.
